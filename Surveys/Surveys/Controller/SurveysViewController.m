@@ -165,6 +165,10 @@
         
         NSURL *url = [NSURL URLWithString:surveyObj.surveyCoverImageUrl];
         
+        /**
+         *
+         *  SDWebImage - It is a 3rd party library, which helps download images from the url and to store those images in the cache.
+         */
         [self.surveyImageView sd_setImageWithURL:url
                           placeholderImage:[UIImage imageNamed:@"Default_Friends"]
                                    options:SDWebImageRefreshCached];
@@ -215,7 +219,7 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
                         /*!
-                         *  KSURVEYCOUNT - Store json respone count
+                         *  KSURVEYCOUNT - Store json respone count, which helps to display page indicators
                          *
                          */
                         [[NSUserDefaults standardUserDefaults] setInteger:self.surveysArray.count forKey:KSURVEYCOUNT];
@@ -272,12 +276,17 @@
 
 -(IBAction)takeTheSurveyButtonTapped:(id)sender
 {
-    
     TakeTheSurveyViewController* takeTheSurveyView = [self.storyboard instantiateViewControllerWithIdentifier:@"TakeTheSurveyViewController"];
     [self.navigationController pushViewController:takeTheSurveyView animated:YES];
 
 }
 
+
+/*!
+ *  Received notification from scrollView Category
+ *
+ *  notification - Contains page number
+ */
 -(void)pageIndicatorChanged:(NSNotification *)notification
 {
     self.currentPageNumber = notification.object;
