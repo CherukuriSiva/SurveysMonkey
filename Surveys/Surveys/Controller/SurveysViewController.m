@@ -1,9 +1,9 @@
 //
-//  JMOViewController.m
-//  CustomScrollViewIndicator
+//  SurveysViewController.h
+//  Surveys
 //
-//  Created by Jerome Morissard on 10/25/13.
-//  Copyright (c) 2013 Jerome Morissard. All rights reserved.
+//  Created by Apple on 16/11/16.
+//  Copyright © 2016 Nimbl3. All rights reserved.
 //
 
 #import "SurveysViewController.h"
@@ -74,6 +74,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:YES];
     self.navigationItem.title = @"SURVEYS";
     
 }
@@ -163,17 +164,31 @@
     {
         SurveyObject *surveyObj = self.surveysArray[pageNumber];
         
-        NSURL *url = [NSURL URLWithString:surveyObj.surveyCoverImageUrl];
+        NSURL *url;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || [UIScreen mainScreen].bounds.size.width > 375)
+        {
+            /**
+             *  To get the high resolution image appended “l” to the image url.
+             */
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"%@l",surveyObj.surveyCoverImageUrl]];
+        }
+        else
+        {
+            url = [NSURL URLWithString:surveyObj.surveyCoverImageUrl];
+        }
         
         /**
          *
          *  SDWebImage - It is a 3rd party library, which helps download images from the url and to store those images in the cache.
          */
         [self.surveyImageView sd_setImageWithURL:url
-                          placeholderImage:[UIImage imageNamed:@"Default_Friends"]
-                                   options:SDWebImageRefreshCached];
+                                    placeholderImage:[UIImage imageNamed:@""]
+                                             options:SDWebImageRefreshCached];
+        
         self.nameLabel.text = surveyObj.surveyTitle;
         self.descriptionLabel.text = surveyObj.surveyDescription;
+        
+        self.currentPageNumber = [NSNumber numberWithInt:pageNumber];
     }
     
     

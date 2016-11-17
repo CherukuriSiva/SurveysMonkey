@@ -215,6 +215,11 @@ static char viewScrollIndicatorTypeKey;
         if ([viewScrollIndicator isKindOfClass:[UIPageControl class]]) {
             UIPageControl *pageControl = (UIPageControl *)viewScrollIndicator;
             [pageControl setCurrentPage:pageControl.numberOfPages*pourcent];
+            
+            NSNumber* number = [NSNumber numberWithFloat:pageControl.numberOfPages*pourcent];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PageIndicatorChanged" object:number];
+
         }
         
         rect.origin.x =  self.contentOffset.x + MAX(0.0f,(0.5 * self.frame.size.width) - viewScrollIndicator.frame.size.width/2);
@@ -242,6 +247,7 @@ static char viewScrollIndicatorTypeKey;
             
             NSNumber* number = [NSNumber numberWithFloat:pageControl.numberOfPages*pourcent];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PageIndicatorChanged" object:number];
+            
         }
         
         rect.origin.y =  self.contentOffset.y + MAX(0.0f,(0.5 * self.frame.size.height) - viewScrollIndicator.frame.size.height/2);
@@ -288,7 +294,10 @@ static char viewScrollIndicatorTypeKey;
 
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
 {
-    if (self.contentSize.width > 0.0f) {
+    NSLog(@"Content size width is: %f",self.contentSize.width);
+    
+    if (self.contentSize.width > 0.0f)
+    {
         [self refreshCustomScrollIndicatorsWithAlpha:1.0f];
         
         /*
