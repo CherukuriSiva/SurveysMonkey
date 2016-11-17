@@ -26,26 +26,31 @@ static char viewScrollIndicatorTypeKey;
 
 #pragma mark - Storage
 
-- (void) setViewHForHorizontalScrollIndicator:(UIView*)viewScrollIndicator {
+- (void) setViewHForHorizontalScrollIndicator:(UIView*)viewScrollIndicator
+{
     objc_setAssociatedObject(self, &viewScrollIndicatorKeyH,
                              viewScrollIndicator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIView*) getViewForHorizontalScrollIndicator {
+- (UIView*) getViewForHorizontalScrollIndicator
+{
     return objc_getAssociatedObject(self, &viewScrollIndicatorKeyH);
 }
 
-- (void) setViewHForVerticalScrollIndicator:(UIView*)viewScrollIndicator {
+- (void) setViewHForVerticalScrollIndicator:(UIView*)viewScrollIndicator
+{
     objc_setAssociatedObject(self, &viewScrollIndicatorKeyV,
                              viewScrollIndicator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIView*) getViewForVerticalScrollIndicator {
+- (UIView*) getViewForVerticalScrollIndicator
+{
     return objc_getAssociatedObject(self, &viewScrollIndicatorKeyV);
 }
 
 
-- (void) setVerticalIndicatorPosition:(JMOScrollIndicatorPosition)position {
+- (void) setVerticalIndicatorPosition:(JMOScrollIndicatorPosition)position
+{
     objc_setAssociatedObject(self, &viewScrollIndicatorVerticalPosKey,@(position), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -83,43 +88,48 @@ static char viewScrollIndicatorTypeKey;
 
     CGRect frame = CGRectZero;
     CGFloat width = 0.0f;
-    if (style == JMOScrollIndicatorTypeClassic) {
+    
+    if (style == JMOScrollIndicatorTypeClassic)
+    {
         width = JMOScrollIndicatorHeight;
     }
-    else {
+    else
+    {
         width = JMOScrollIndicatorHeightPageControl;
     }
     
-    if (vPos == JMOVerticalScrollIndicatorPositionRight) {
+    
+    if (vPos == JMOVerticalScrollIndicatorPositionRight)
+    {
         frame = CGRectMake(self.frame.size.width - width - JMOScrollIndicatorBottomSpace, 0.0f, JMOScrollIndicatorHeight,JMOScrollIndicatorWidth);
     }
-    else {
+    else
+    {
         frame = CGRectMake(JMOScrollIndicatorBottomSpace, 0.0f, JMOScrollIndicatorHeight,JMOScrollIndicatorWidth);
     }
     
     
-    if (style == JMOScrollIndicatorTypeClassic) {
+    if (style == JMOScrollIndicatorTypeClassic)
+    {
         UIView *viewScrollIndicator = [[UIView alloc] initWithFrame:frame];
         viewScrollIndicator.alpha = 0.0f;
         viewScrollIndicator.layer.cornerRadius = width/2.0f;
-        
-        /*
-         viewScrollIndicator.layer.borderWidth = 1.0f;
-         viewScrollIndicator.layer.borderColor = indicatorColor.CGColor;
-         */
         
         [viewScrollIndicator setBackgroundColor:[indicatorColor colorWithAlphaComponent:0.75]];
         [self setViewHForVerticalScrollIndicator:viewScrollIndicator];
         [self addSubview:viewScrollIndicator];
     }
-    else if (style == JMOScrollIndicatorTypePageControl) {
+    else if (style == JMOScrollIndicatorTypePageControl)
+    {
         UIPageControl *pageCOntrol = [[UIPageControl alloc] initWithFrame:frame];
         [pageCOntrol setNumberOfPages:[[NSUserDefaults standardUserDefaults] integerForKey:KSURVEYCOUNT]];
         [pageCOntrol setCurrentPage:0];
         pageCOntrol.backgroundColor = [UIColor clearColor];
         pageCOntrol.alpha = 0.0f;
         pageCOntrol.transform = CGAffineTransformMakeRotation(M_PI/2);
-        if ([pageCOntrol respondsToSelector:@selector(pageIndicatorTintColor)]) {
+        
+        if ([pageCOntrol respondsToSelector:@selector(pageIndicatorTintColor)])
+        {
             pageCOntrol.pageIndicatorTintColor = [indicatorColor colorWithAlphaComponent:0.15];
             pageCOntrol.currentPageIndicatorTintColor = indicatorColor;
         }
@@ -137,21 +147,27 @@ static char viewScrollIndicatorTypeKey;
 
     CGRect frame = CGRectZero;
     CGFloat height = 0.0f;
-    if (style == JMOScrollIndicatorTypeClassic) {
+   
+    if (style == JMOScrollIndicatorTypeClassic)
+    {
         height = JMOScrollIndicatorHeight;
     }
-    else {
+    else
+    {
         height = JMOScrollIndicatorHeightPageControl;
     }
     
     if (hPos == JMOHorizontalScrollIndicatorPositionBottom) {
         frame = CGRectMake(0.0f, self.frame.size.height - height - JMOScrollIndicatorBottomSpace, JMOScrollIndicatorWidth,height);
     }
-    else {
+    else
+    {
         frame = CGRectMake(0.0f, JMOScrollIndicatorBottomSpace, JMOScrollIndicatorWidth,height);
     }
     
-    if (style == JMOScrollIndicatorTypeClassic) {
+    
+    if (style == JMOScrollIndicatorTypeClassic)
+    {
         UIView *viewScrollIndicator = [[UIView alloc] initWithFrame:frame];
         viewScrollIndicator.alpha = 0.0f;
         viewScrollIndicator.layer.cornerRadius = height/2.0f;
@@ -160,14 +176,16 @@ static char viewScrollIndicatorTypeKey;
         [self setViewHForHorizontalScrollIndicator:viewScrollIndicator];
         [self addSubview:viewScrollIndicator];
     }
-    else if (style == JMOScrollIndicatorTypePageControl) {
+    else if (style == JMOScrollIndicatorTypePageControl)
+    {
         UIPageControl *pageCOntrol = [[UIPageControl alloc] initWithFrame:frame];
         [pageCOntrol setNumberOfPages:[[NSUserDefaults standardUserDefaults] integerForKey:KSURVEYCOUNT]];
         [pageCOntrol setCurrentPage:0];
         pageCOntrol.backgroundColor = [UIColor clearColor];
         pageCOntrol.alpha = 0.0f;
 
-        if ([pageCOntrol respondsToSelector:@selector(pageIndicatorTintColor)]) {
+        if ([pageCOntrol respondsToSelector:@selector(pageIndicatorTintColor)])
+        {
             pageCOntrol.pageIndicatorTintColor = [indicatorColor colorWithAlphaComponent:0.15];
             pageCOntrol.currentPageIndicatorTintColor = indicatorColor;
         }
@@ -179,17 +197,21 @@ static char viewScrollIndicatorTypeKey;
 
 -(void) enableCustomScrollIndicatorsWithScrollIndicatorType:(JMOScrollIndicatorType)type positions:(JMOScrollIndicatorPosition)positions color:(UIColor *)color
 {
-    if (positions & JMOVerticalScrollIndicatorPositionRight) {
+    if (positions & JMOVerticalScrollIndicatorPositionRight)
+    {
         [self enableCustomVerticalScrollIndicator:JMOVerticalScrollIndicatorPositionRight withColor:color withIndicatorStyle:type];
     }
-    else if (positions & JMOVerticalScrollIndicatorPositionLeft) {
+    else if (positions & JMOVerticalScrollIndicatorPositionLeft)
+    {
         [self enableCustomVerticalScrollIndicator:JMOVerticalScrollIndicatorPositionLeft withColor:color withIndicatorStyle:type];
     }
     
-    if (positions & JMOHorizontalScrollIndicatorPositionBottom) {
+    if (positions & JMOHorizontalScrollIndicatorPositionBottom)
+    {
         [self enableCustomHorizontalScrollIndicator:JMOHorizontalScrollIndicatorPositionBottom withColor:color withIndicatorStyle:type];
     }
-    else if (positions & JMOHorizontalScrollIndicatorPositionTop) {
+    else if (positions & JMOHorizontalScrollIndicatorPositionTop)
+    {
         [self enableCustomHorizontalScrollIndicator:JMOHorizontalScrollIndicatorPositionTop withColor:color withIndicatorStyle:type];
     }
     
@@ -211,20 +233,25 @@ static char viewScrollIndicatorTypeKey;
     CGFloat pourcent = self.contentOffset.x / (self.contentSize.width - self.frame.size.width);
     CGRect rect =  viewScrollIndicator.frame;
     
-    if (style == JMOScrollIndicatorTypePageControl) {
-        if ([viewScrollIndicator isKindOfClass:[UIPageControl class]]) {
+    if (style == JMOScrollIndicatorTypePageControl)
+    {
+        if ([viewScrollIndicator isKindOfClass:[UIPageControl class]])
+        {
             UIPageControl *pageControl = (UIPageControl *)viewScrollIndicator;
             [pageControl setCurrentPage:pageControl.numberOfPages*pourcent];
             
+            /*!
+             *  Post notification - When page indicator changed
+             */
             NSNumber* number = [NSNumber numberWithFloat:pageControl.numberOfPages*pourcent];
-            
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PageIndicatorChanged" object:number];
 
         }
         
         rect.origin.x =  self.contentOffset.x + MAX(0.0f,(0.5 * self.frame.size.width) - viewScrollIndicator.frame.size.width/2);
     }
-    else {
+    else
+    {
         rect.origin.x =  self.contentOffset.x + MAX(0.0f,(pourcent * self.frame.size.width) - viewScrollIndicator.frame.size.width);
     }
     
@@ -240,11 +267,16 @@ static char viewScrollIndicatorTypeKey;
     CGFloat pourcent = self.contentOffset.y / (self.contentSize.height - self.frame.size.height);
     CGRect rect =  viewScrollIndicator.frame;
     
-    if (style == JMOScrollIndicatorTypePageControl) {
-        if ([viewScrollIndicator isKindOfClass:[UIPageControl class]]) {
+    if (style == JMOScrollIndicatorTypePageControl)
+    {
+        if ([viewScrollIndicator isKindOfClass:[UIPageControl class]])
+        {
             UIPageControl *pageControl = (UIPageControl *)viewScrollIndicator;
             [pageControl setCurrentPage:pageControl.numberOfPages*pourcent];
             
+            /*!
+             *  Post notification - When page indicator changed
+             */
             NSNumber* number = [NSNumber numberWithFloat:pageControl.numberOfPages*pourcent];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PageIndicatorChanged" object:number];
             
@@ -252,13 +284,17 @@ static char viewScrollIndicatorTypeKey;
         
         rect.origin.y =  self.contentOffset.y + MAX(0.0f,(0.5 * self.frame.size.height) - viewScrollIndicator.frame.size.height/2);
     }
-    else {
+    else
+    {
         rect.origin.y =  self.contentOffset.y + MAX(0.0f,(pourcent * self.frame.size.height) - viewScrollIndicator.frame.size.height);
     }
     
     viewScrollIndicator.frame = rect;
 }
 
+/*!
+ *  Un hide page indicators
+ */
 - (void)refreshCustomScrollIndicators
 {
     [self refreshCustomScrollIndicatorsWithAlpha:1.0f];
@@ -267,13 +303,16 @@ static char viewScrollIndicatorTypeKey;
 
 -(void)disableCustomScrollIndicator
 {
-    @try {
+    @try
+    {
         [self removeKVOObservers];
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception)
+    {
         
     }
-    @finally {
+    @finally
+    {
         
     }
 }
@@ -299,16 +338,7 @@ static char viewScrollIndicatorTypeKey;
     if (self.contentSize.width > 0.0f)
     {
         [self refreshCustomScrollIndicatorsWithAlpha:1.0f];
-        
-        /*
-        UIView *viewScrollIndicator = [self getViewForHorizontalScrollIndicator];
-        CGRect rect =  self.frame;
-        CGFloat pourcent = self.contentOffset.x / self.contentSize.width;
-        viewScrollIndicator.hidden = self.contentSize.width < self.frame.size.width;
-        rect.size.width = self.frame.size.width * (self.frame.size.width / self.contentSize.width);
-        rect.origin.x = pourcent * self.frame.size.width;
-        viewScrollIndicator.frame = rect;
-         */
+    
     }
 }
 

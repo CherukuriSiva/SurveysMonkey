@@ -23,9 +23,7 @@ typedef NS_ENUM(NSUInteger, JMOScrollIndicatorType)
 
 @interface UIScrollView (ScrollIndicator)
 -(void)enableCustomScrollIndicatorsWithScrollIndicatorType:(JMOScrollIndicatorType)type positions:(JMOScrollIndicatorPosition)positions color:(UIColor *)color;
--(void)disableCustomScrollIndicator;
-
 -(void)refreshCustomScrollIndicators;
 -(void)refreshCustomScrollIndicatorsWithAlpha:(CGFloat)alpha;
-
+-(void)disableCustomScrollIndicator;
 @end

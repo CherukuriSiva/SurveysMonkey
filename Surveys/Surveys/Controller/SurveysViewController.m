@@ -165,6 +165,8 @@
         SurveyObject *surveyObj = self.surveysArray[pageNumber];
         
         NSURL *url;
+        
+        //iPad                                                      //iPhone 6 Plus, 6S Plus, 7 Plus
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || [UIScreen mainScreen].bounds.size.width > 375)
         {
             /**
