@@ -332,9 +332,7 @@ static char viewScrollIndicatorTypeKey;
 }
 
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
-{
-    NSLog(@"Content size width is: %f",self.contentSize.width);
-    
+{    
     if (self.contentSize.width > 0.0f)
     {
         [self refreshCustomScrollIndicatorsWithAlpha:1.0f];
