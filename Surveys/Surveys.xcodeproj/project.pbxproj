@@ -7,41 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180043AF1DDC9F7400847C7E /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 180043AE1DDC9F7400847C7E /* UtilityClass.m */; };
-		1829ABFA1DDC995100B1691D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829ABF91DDC995100B1691D /* main.m */; };
-		1829ABFD1DDC995100B1691D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829ABFC1DDC995100B1691D /* AppDelegate.m */; };
 		1829AC031DDC995200B1691D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1829AC011DDC995200B1691D /* Main.storyboard */; };
 		1829AC051DDC995200B1691D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1829AC041DDC995200B1691D /* Assets.xcassets */; };
 		1829AC081DDC995200B1691D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1829AC061DDC995200B1691D /* LaunchScreen.storyboard */; };
-		1829AC111DDC9B1C00B1691D /* SurveysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829AC101DDC9B1C00B1691D /* SurveysViewController.m */; };
-		1829AC141DDC9BE500B1691D /* UIScrollView+ScrollIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829AC131DDC9BE500B1691D /* UIScrollView+ScrollIndicator.m */; };
-		18D97B631DDD8BC800029190 /* SurveyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D97B621DDD8BC800029190 /* SurveyObject.m */; };
+		1850518A1DDDD4E900CCB517 /* SurveysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051851DDDD4E900CCB517 /* SurveysViewController.m */; };
+		1850518B1DDDD4E900CCB517 /* TakeTheSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051871DDDD4E900CCB517 /* TakeTheSurveyViewController.m */; };
+		1850518C1DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051891DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.m */; };
+		185051941DDDD4FA00CCB517 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850518E1DDDD4FA00CCB517 /* AppDelegate.m */; };
+		185051961DDDD4FA00CCB517 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051911DDDD4FA00CCB517 /* main.m */; };
+		185051971DDDD4FA00CCB517 /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051931DDDD4FA00CCB517 /* UtilityClass.m */; };
+		1850519A1DDDD50D00CCB517 /* SurveyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051991DDDD50D00CCB517 /* SurveyObject.m */; };
+		1850519C1DDDD5B500CCB517 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1850519B1DDDD5B500CCB517 /* Info.plist */; };
 		18D97B681DDDB1BA00029190 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D97B671DDDB1BA00029190 /* SystemConfiguration.framework */; };
-		18DAD4D11DDD7F2000D6DD37 /* TakeTheSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DAD4D01DDD7F2000D6DD37 /* TakeTheSurveyViewController.m */; };
 		C226BF6C981A5C6E6BF1AA1A /* libPods-Surveys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF631A425A89CCA71C9BB011 /* libPods-Surveys.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		180043AD1DDC9F7400847C7E /* UtilityClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityClass.h; sourceTree = "<group>"; };
-		180043AE1DDC9F7400847C7E /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityClass.m; sourceTree = "<group>"; };
 		1829ABF51DDC995100B1691D /* Surveys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveys.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1829ABF91DDC995100B1691D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1829ABFB1DDC995100B1691D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1829ABFC1DDC995100B1691D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1829AC021DDC995200B1691D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1829AC041DDC995200B1691D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1829AC071DDC995200B1691D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1829AC091DDC995200B1691D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1829AC0F1DDC9B1C00B1691D /* SurveysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveysViewController.h; sourceTree = "<group>"; };
-		1829AC101DDC9B1C00B1691D /* SurveysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveysViewController.m; sourceTree = "<group>"; };
-		1829AC121DDC9BE500B1691D /* UIScrollView+ScrollIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScrollIndicator.h"; sourceTree = "<group>"; };
-		1829AC131DDC9BE500B1691D /* UIScrollView+ScrollIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ScrollIndicator.m"; sourceTree = "<group>"; };
-		18D97B611DDD8BC800029190 /* SurveyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyObject.h; sourceTree = "<group>"; };
-		18D97B621DDD8BC800029190 /* SurveyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyObject.m; sourceTree = "<group>"; };
+		185051841DDDD4E900CCB517 /* SurveysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SurveysViewController.h; path = Controller/SurveysViewController.h; sourceTree = "<group>"; };
+		185051851DDDD4E900CCB517 /* SurveysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SurveysViewController.m; path = Controller/SurveysViewController.m; sourceTree = "<group>"; };
+		185051861DDDD4E900CCB517 /* TakeTheSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakeTheSurveyViewController.h; path = Controller/TakeTheSurveyViewController.h; sourceTree = "<group>"; };
+		185051871DDDD4E900CCB517 /* TakeTheSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakeTheSurveyViewController.m; path = Controller/TakeTheSurveyViewController.m; sourceTree = "<group>"; };
+		185051881DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+ScrollIndicator.h"; path = "Controller/UIScrollView+ScrollIndicator.h"; sourceTree = "<group>"; };
+		185051891DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+ScrollIndicator.m"; path = "Controller/UIScrollView+ScrollIndicator.m"; sourceTree = "<group>"; };
+		1850518D1DDDD4FA00CCB517 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Common Classes/AppDelegate.h"; sourceTree = "<group>"; };
+		1850518E1DDDD4FA00CCB517 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Common Classes/AppDelegate.m"; sourceTree = "<group>"; };
+		1850518F1DDDD4FA00CCB517 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "Common Classes/Constants.h"; sourceTree = "<group>"; };
+		185051911DDDD4FA00CCB517 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Common Classes/main.m"; sourceTree = "<group>"; };
+		185051921DDDD4FA00CCB517 /* UtilityClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilityClass.h; path = "Common Classes/UtilityClass.h"; sourceTree = "<group>"; };
+		185051931DDDD4FA00CCB517 /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilityClass.m; path = "Common Classes/UtilityClass.m"; sourceTree = "<group>"; };
+		185051981DDDD50D00CCB517 /* SurveyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SurveyObject.h; path = Model/SurveyObject.h; sourceTree = "<group>"; };
+		185051991DDDD50D00CCB517 /* SurveyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SurveyObject.m; path = Model/SurveyObject.m; sourceTree = "<group>"; };
+		1850519B1DDDD5B500CCB517 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D97B671DDDB1BA00029190 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		18D97B691DDDC5AA00029190 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		18DAD4CF1DDD7F2000D6DD37 /* TakeTheSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakeTheSurveyViewController.h; path = ../TakeTheSurveyViewController.h; sourceTree = "<group>"; };
-		18DAD4D01DDD7F2000D6DD37 /* TakeTheSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakeTheSurveyViewController.m; path = ../TakeTheSurveyViewController.m; sourceTree = "<group>"; };
 		691FDD8E6CAA4440C55690B8 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
 		80E7A512BDE540E352E23E5C /* Pods-Surveys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.release.xcconfig"; path = "Pods/Target Support Files/Pods-Surveys/Pods-Surveys.release.xcconfig"; sourceTree = "<group>"; };
 		BF631A425A89CCA71C9BB011 /* libPods-Surveys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Surveys.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +87,7 @@
 				18D97B651DDDB0E700029190 /* Controllers */,
 				18D97B641DDDB0CF00029190 /* Common Classes */,
 				1829AC041DDC995200B1691D /* Assets.xcassets */,
-				1829AC091DDC995200B1691D /* Info.plist */,
+				1850519B1DDDD5B500CCB517 /* Info.plist */,
 				1829ABF81DDC995100B1691D /* Supporting Files */,
 			);
 			path = Surveys;
@@ -95,7 +96,6 @@
 		1829ABF81DDC995100B1691D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1829ABF91DDC995100B1691D /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -103,8 +103,8 @@
 		18D97B601DDD8B8F00029190 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18D97B611DDD8BC800029190 /* SurveyObject.h */,
-				18D97B621DDD8BC800029190 /* SurveyObject.m */,
+				185051981DDDD50D00CCB517 /* SurveyObject.h */,
+				185051991DDDD50D00CCB517 /* SurveyObject.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -112,11 +112,12 @@
 		18D97B641DDDB0CF00029190 /* Common Classes */ = {
 			isa = PBXGroup;
 			children = (
-				18D97B691DDDC5AA00029190 /* Constants.h */,
-				1829ABFB1DDC995100B1691D /* AppDelegate.h */,
-				1829ABFC1DDC995100B1691D /* AppDelegate.m */,
-				180043AD1DDC9F7400847C7E /* UtilityClass.h */,
-				180043AE1DDC9F7400847C7E /* UtilityClass.m */,
+				1850518D1DDDD4FA00CCB517 /* AppDelegate.h */,
+				1850518E1DDDD4FA00CCB517 /* AppDelegate.m */,
+				1850518F1DDDD4FA00CCB517 /* Constants.h */,
+				185051911DDDD4FA00CCB517 /* main.m */,
+				185051921DDDD4FA00CCB517 /* UtilityClass.h */,
+				185051931DDDD4FA00CCB517 /* UtilityClass.m */,
 			);
 			name = "Common Classes";
 			sourceTree = "<group>";
@@ -124,12 +125,12 @@
 		18D97B651DDDB0E700029190 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1829AC0F1DDC9B1C00B1691D /* SurveysViewController.h */,
-				1829AC101DDC9B1C00B1691D /* SurveysViewController.m */,
-				1829AC121DDC9BE500B1691D /* UIScrollView+ScrollIndicator.h */,
-				1829AC131DDC9BE500B1691D /* UIScrollView+ScrollIndicator.m */,
-				18DAD4CF1DDD7F2000D6DD37 /* TakeTheSurveyViewController.h */,
-				18DAD4D01DDD7F2000D6DD37 /* TakeTheSurveyViewController.m */,
+				185051841DDDD4E900CCB517 /* SurveysViewController.h */,
+				185051851DDDD4E900CCB517 /* SurveysViewController.m */,
+				185051861DDDD4E900CCB517 /* TakeTheSurveyViewController.h */,
+				185051871DDDD4E900CCB517 /* TakeTheSurveyViewController.m */,
+				185051881DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.h */,
+				185051891DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1850519C1DDDD5B500CCB517 /* Info.plist in Resources */,
 				1829AC081DDC995200B1691D /* LaunchScreen.storyboard in Resources */,
 				1829AC051DDC995200B1691D /* Assets.xcassets in Resources */,
 				1829AC031DDC995200B1691D /* Main.storyboard in Resources */,
@@ -284,13 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1829AC141DDC9BE500B1691D /* UIScrollView+ScrollIndicator.m in Sources */,
-				18DAD4D11DDD7F2000D6DD37 /* TakeTheSurveyViewController.m in Sources */,
-				180043AF1DDC9F7400847C7E /* UtilityClass.m in Sources */,
-				1829ABFD1DDC995100B1691D /* AppDelegate.m in Sources */,
-				18D97B631DDD8BC800029190 /* SurveyObject.m in Sources */,
-				1829AC111DDC9B1C00B1691D /* SurveysViewController.m in Sources */,
-				1829ABFA1DDC995100B1691D /* main.m in Sources */,
+				1850519A1DDDD50D00CCB517 /* SurveyObject.m in Sources */,
+				1850518A1DDDD4E900CCB517 /* SurveysViewController.m in Sources */,
+				185051941DDDD4FA00CCB517 /* AppDelegate.m in Sources */,
+				185051971DDDD4FA00CCB517 /* UtilityClass.m in Sources */,
+				1850518C1DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.m in Sources */,
+				1850518B1DDDD4E900CCB517 /* TakeTheSurveyViewController.m in Sources */,
+				185051961DDDD4FA00CCB517 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

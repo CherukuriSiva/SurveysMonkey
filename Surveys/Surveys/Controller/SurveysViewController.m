@@ -109,7 +109,7 @@
 
 - (void)setupInitialUIControls
 {
-    self.navigationItem.leftBarButtonItem = [UtilityClass barbuttonItemWithImage:@"refresh" Target:self action:@selector(leftBarButtonTapped)];
+    self.navigationItem.leftBarButtonItem = [UtilityClass barbuttonItemWithImage:@"Refresh" Target:self action:@selector(leftBarButtonTapped)];
     self.navigationItem.rightBarButtonItem = [UtilityClass barbuttonItemWithImage:@"Hamburger" Target:self action:@selector(rightBarButtonTapped)];
 
     self.scrollView.delegate = self;
