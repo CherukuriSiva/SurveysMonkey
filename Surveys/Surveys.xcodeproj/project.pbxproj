@@ -18,6 +18,9 @@
 		185051971DDDD4FA00CCB517 /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051931DDDD4FA00CCB517 /* UtilityClass.m */; };
 		1850519A1DDDD50D00CCB517 /* SurveyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 185051991DDDD50D00CCB517 /* SurveyObject.m */; };
 		1850519C1DDDD5B500CCB517 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1850519B1DDDD5B500CCB517 /* Info.plist */; };
+		18C70C111DE56B42007D94F0 /* SurveysViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C101DE56B42007D94F0 /* SurveysViewModel.m */; };
+		18C70C161DE56B51007D94F0 /* APIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C131DE56B51007D94F0 /* APIRequestManager.m */; };
+		18C70C171DE56B51007D94F0 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C151DE56B51007D94F0 /* STHTTPRequest.m */; };
 		18D97B681DDDB1BA00029190 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D97B671DDDB1BA00029190 /* SystemConfiguration.framework */; };
 		C226BF6C981A5C6E6BF1AA1A /* libPods-Surveys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF631A425A89CCA71C9BB011 /* libPods-Surveys.a */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,12 @@
 		185051981DDDD50D00CCB517 /* SurveyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SurveyObject.h; path = Model/SurveyObject.h; sourceTree = "<group>"; };
 		185051991DDDD50D00CCB517 /* SurveyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SurveyObject.m; path = Model/SurveyObject.m; sourceTree = "<group>"; };
 		1850519B1DDDD5B500CCB517 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C70C0F1DE56B42007D94F0 /* SurveysViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SurveysViewModel.h; path = "View Model/SurveysViewModel.h"; sourceTree = "<group>"; };
+		18C70C101DE56B42007D94F0 /* SurveysViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SurveysViewModel.m; path = "View Model/SurveysViewModel.m"; sourceTree = "<group>"; };
+		18C70C121DE56B51007D94F0 /* APIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIRequestManager.h; path = Helpers/APIRequestManager.h; sourceTree = "<group>"; };
+		18C70C131DE56B51007D94F0 /* APIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIRequestManager.m; path = Helpers/APIRequestManager.m; sourceTree = "<group>"; };
+		18C70C141DE56B51007D94F0 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STHTTPRequest.h; path = Helpers/STHTTPRequest.h; sourceTree = "<group>"; };
+		18C70C151DE56B51007D94F0 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHTTPRequest.m; path = Helpers/STHTTPRequest.m; sourceTree = "<group>"; };
 		18D97B671DDDB1BA00029190 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		691FDD8E6CAA4440C55690B8 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
 		80E7A512BDE540E352E23E5C /* Pods-Surveys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.release.xcconfig"; path = "Pods/Target Support Files/Pods-Surveys/Pods-Surveys.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +93,9 @@
 			children = (
 				18D97B601DDD8B8F00029190 /* Model */,
 				18D97B661DDDB11700029190 /* View */,
+				18C70C0B1DE5688E007D94F0 /* View Model */,
 				18D97B651DDDB0E700029190 /* Controllers */,
+				18C70C011DE5666B007D94F0 /* Helpers */,
 				18D97B641DDDB0CF00029190 /* Common Classes */,
 				1829AC041DDC995200B1691D /* Assets.xcassets */,
 				1850519B1DDDD5B500CCB517 /* Info.plist */,
@@ -98,6 +109,26 @@
 			children = (
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18C70C011DE5666B007D94F0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18C70C121DE56B51007D94F0 /* APIRequestManager.h */,
+				18C70C131DE56B51007D94F0 /* APIRequestManager.m */,
+				18C70C141DE56B51007D94F0 /* STHTTPRequest.h */,
+				18C70C151DE56B51007D94F0 /* STHTTPRequest.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		18C70C0B1DE5688E007D94F0 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				18C70C0F1DE56B42007D94F0 /* SurveysViewModel.h */,
+				18C70C101DE56B42007D94F0 /* SurveysViewModel.m */,
+			);
+			name = "View Model";
 			sourceTree = "<group>";
 		};
 		18D97B601DDD8B8F00029190 /* Model */ = {
@@ -290,8 +321,11 @@
 				1850518A1DDDD4E900CCB517 /* SurveysViewController.m in Sources */,
 				185051941DDDD4FA00CCB517 /* AppDelegate.m in Sources */,
 				185051971DDDD4FA00CCB517 /* UtilityClass.m in Sources */,
+				18C70C111DE56B42007D94F0 /* SurveysViewModel.m in Sources */,
+				18C70C161DE56B51007D94F0 /* APIRequestManager.m in Sources */,
 				1850518C1DDDD4E900CCB517 /* UIScrollView+ScrollIndicator.m in Sources */,
 				1850518B1DDDD4E900CCB517 /* TakeTheSurveyViewController.m in Sources */,
+				18C70C171DE56B51007D94F0 /* STHTTPRequest.m in Sources */,
 				185051961DDDD4FA00CCB517 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

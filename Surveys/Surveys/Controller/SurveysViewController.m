@@ -10,10 +10,11 @@
 #import "TakeTheSurveyViewController.h"
 #import "UIScrollView+ScrollIndicator.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "AFHTTPSessionManager.h"
 #import "SurveyObject.h"
 #import "UtilityClass.h"
 #import "Constants.h"
+#import "APIRequestManager.h"
+#import "SurveysViewModel.h"
 
 @interface SurveysViewController () <UIScrollViewDelegate>
 
@@ -205,57 +206,42 @@
         [self.spinner startAnimating];
         self.noInternetLabel.hidden = YES;
         
-        NSURLSession *session = [NSURLSession sharedSession];
         
-        [[session dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?access_token=%@",KUSAYSERVERENDPOINT,KUSAYSERVERACCESSTOKEN]]
-                completionHandler:^(NSData *data,
-                                    NSURLResponse *response,
-                                    NSError *error){
+        [APIRequestManager PostWithUrl:[NSString stringWithFormat:@"%@?access_token=%@",KUSAYSERVERENDPOINT,KUSAYSERVERACCESSTOKEN] Parameters:nil success:^(id json)
+        {
+            if([json isKindOfClass:[NSArray class]])
+            {
+                
+                self.surveysArray = [SurveysViewModel getSurveysViewModelData:json];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    self.surveysArray = [NSMutableArray new];
+                    /*!
+                     *  KSURVEYCOUNT - Store json respone count, which helps to display page indicators
+                     *
+                     */
+                    [[NSUserDefaults standardUserDefaults] setInteger:self.surveysArray.count forKey:KSURVEYCOUNT];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                     
-                    @autoreleasepool
-                    {
-                        
-                        NSArray* surveysArray = [NSJSONSerialization JSONObjectWithData:data
-                                                                                options: NSJSONReadingAllowFragments
-                                                                                  error:&error];
-                        
-                        for(int i = 0; i < surveysArray.count; i++)
-                        {
-                            if (surveysArray[i] != (id)[NSNull null])
-                            {
-                                SurveyObject *surveyObj = [[SurveyObject alloc] initWithSurveyObject:surveysArray[i]];
-                                [self.surveysArray addObject:surveyObj];
-                            }
-                        }
-                        
-                        //UI should always be chnaged on main thread
-                    }
+                    //update UI in main thread
                     
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        /*!
-                         *  KSURVEYCOUNT - Store json respone count, which helps to display page indicators
-                         *
-                         */
-                        [[NSUserDefaults standardUserDefaults] setInteger:self.surveysArray.count forKey:KSURVEYCOUNT];
-                        [[NSUserDefaults standardUserDefaults] synchronize];
-                        
-                        //update UI in main thread
-                        
-                        [self unHideCurrentViewControls];
-
-                        [self.scrollView enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl positions:JMOVerticalScrollIndicatorPositionRight color:[UIColor whiteColor]];
-                        [self changeCurrentPage:0];
-                        [self.scrollView refreshCustomScrollIndicatorsWithAlpha:1.0];
-
-                        [self.spinner stopAnimating];
-                        
-                        
-                    });
+                    [self unHideCurrentViewControls];
                     
-                }] resume];
+                    [self.scrollView enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl positions:JMOVerticalScrollIndicatorPositionRight color:[UIColor whiteColor]];
+                    [self changeCurrentPage:0];
+                    [self.scrollView refreshCustomScrollIndicatorsWithAlpha:1.0];
+                    
+                    [self.spinner stopAnimating];
+                    
+                    
+                });
+            }
+            
+        } failure:^(NSError *error)
+        {
+            
+        }];
+        
     }else
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No internet connection"
